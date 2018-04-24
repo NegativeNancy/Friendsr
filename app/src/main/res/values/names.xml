@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>Arya</item>
+        <item>Cersei</item>
+        <item>Daenerys</item>
+        <item>Jaime</item>
+        <item>Jon</item>
+        <item>Jorah</item>
+        <item>Margaery</item>
+        <item>Melisandre</item>
+        <item>Sansa</item>
+        <item>Tyrion</item>
+    </string-array>
+</resources>
