@@ -1,12 +1,15 @@
 package com.example.ivodenhertog.friendsr;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,19 @@ public class FriendsAdapter extends ArrayAdapter<Friend> {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.grid_item, parent, false);
         }
+
+        ImageView profileImage = convertView.findViewById(R.id.profileImage);
+        TextView profileName = convertView.findViewById(R.id.profileName);
+
+        Friend inputFriend = (Friend) friends.get(position);
+
+        int inputId = inputFriend.getDrawableId();
+        Drawable inputImage = getContext().getResources().getDrawable(inputId);
+        String inputName = inputFriend.getName();
+
+        profileImage.setImageDrawable(inputImage);
+        profileName.setText(inputName);
+
         return convertView;
     }
 }
