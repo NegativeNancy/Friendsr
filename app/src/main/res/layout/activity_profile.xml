@@ -30,7 +30,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:text="@string/placeholder_text" />
+        android:text="@string/placeholder_name" />
 
     <TextView
         android:id="@+id/profileBio"
@@ -39,6 +39,7 @@
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:layout_weight="9"
-        android:text="@string/placeholder_text" />
+        android:text="@string/placeholder_bio_0"
+        android:scrollbars = "vertical" />
 
 </LinearLayout>

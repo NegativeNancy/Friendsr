@@ -1,4 +1,76 @@
 <resources>
     <string name="app_name">Friendsr</string>
-    <string name="placeholder_text">Placeholder</string>
+    <string name="placeholder_name">Placeholder</string>
+    <string name="placeholder_bio_0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus ex iaculis nisl
+        dapibus maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Proin magna quam, tincidunt nec eros at, rutrum volutpat ligula. Proin non
+        facilisis velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Etiam metus orci, dapibus eu vestibulum ac, porta eu quam. Suspendisse
+        euismod et massa sed blandit. Quisque ultricies tortor vitae mollis iaculis. \n\n
+
+        Maecenas quis elementum urna, in pulvinar elit. Aliquam iaculis magna et ligula fermentum
+        accumsan. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum
+        primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; Integer malesuada lectus ante, nec venenatis orci finibus in.
+        Quisque rutrum, mi non dapibus finibus, nibh nunc mattis dolor, a finibus nibh quam ac mi.
+        Donec et arcu ut turpis volutpat porttitor. Integer et efficitur sapien. Pellentesque
+        habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Sed bibendum purus et metus consequat rutrum. Integer sit amet luctus neque. Donec nisl
+        elit, laoreet eu libero ut, faucibus euismod mauris. Donec non fringilla risus. Duis ac
+        sodales velit, non lobortis metus.
+    </string>
+    <string name="placeholder_bio_1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non cursus dolor. Nulla
+        porttitor libero nisl, vitae pulvinar lectus varius vel. Pellentesque tincidunt augue
+        tempus vestibulum interdum. Mauris sollicitudin hendrerit nisl, vitae hendrerit justo
+        blandit a. Nunc pulvinar facilisis quam. Vestibulum libero nisi, consectetur at leo vitae,
+        viverra iaculis metus. Fusce vitae eros sit amet ipsum volutpat sodales. Pellentesque dui
+        tellus, accumsan in dolor nec, posuere dictum mauris. Sed finibus, elit et lacinia ornare,
+        ipsum ex porta enim, non eleifend enim elit nec eros. Aliquam vel tempus orci. \n\n
+
+        Vestibulum et risus eleifend, condimentum dui sed, convallis dolor. Integer nec dolor
+        tempus, facilisis elit non, vulputate arcu. Nulla et urna vitae mi aliquam hendrerit.
+        Fusce sagittis eget lorem aliquet aliquet. Class aptent taciti sociosqu ad litora torquent
+        per conubia nostra, per inceptos himenaeos. Maecenas fermentum odio mollis nisi convallis
+        faucibus a non justo. Fusce vulputate elit aliquet, bibendum erat sed, convallis lectus.
+        Sed vitae accumsan est. Curabitur rutrum pellentesque sapien, non maximus nisl. Etiam vel
+        orci vitae leo finibus mollis ut id tortor. Sed lobortis posuere turpis, et auctor mi
+        molestie vel. Nulla sit amet libero laoreet, elementum felis et, convallis eros. Sed
+        bibendum ullamcorper lacus et porttitor. Cras consequat ex in lorem mattis tincidunt. \n\n
+
+        Quisque sem nibh, tincidunt et elementum ut, viverra in neque. Aliquam lacinia blandit
+        ipsum, sed porta augue pretium sit amet. In eget auctor risus. Sed sollicitudin mollis
+        neque. Nam et mollis ex. Morbi quis accumsan lacus. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas. Ut commodo vulputate neque, et
+        congue urna. Maecenas pharetra vehicula auctor. Nulla sed est accumsan, interdum libero
+        in, faucibus erat. Sed sit amet lectus malesuada, venenatis risus ut, hendrerit mauris.
+        Nam porttitor quam eget sem elementum, non laoreet ligula tempus.
+    </string>
+    <string name="placeholder_bio_2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent purus quam, varius ut
+        mattis sit amet, sodales ullamcorper metus. Mauris pharetra tincidunt risus id congue.
+        Aenean tincidunt finibus pretium. Sed dictum cursus libero, at euismod dui dictum in.
+        Mauris hendrerit dapibus tellus a lobortis. In suscipit nisl elementum, accumsan leo ac,
+        commodo purus. Morbi interdum euismod diam sit amet bibendum. Donec ligula justo,
+        vulputate eget augue sit amet, ornare vulputate velit. Maecenas id ante posuere,
+        sollicitudin nisl ac, vestibulum ex. Duis pulvinar dictum justo, id aliquam nulla sodales
+        vitae. \n\n
+
+        Maecenas quis est convallis nisi pellentesque bibendum. Proin convallis luctus ante, ut
+        maximus nulla lobortis nec. Integer at nibh lacus. In nec turpis vitae libero faucibus
+        volutpat. Etiam ac ultrices massa. Nam vitae commodo dolor. Duis velit mauris, convallis
+        vel suscipit vel, venenatis non ex. Aenean sem magna, tincidunt a bibendum a, molestie
+        aliquet orci. Vestibulum suscipit tristique neque id molestie. Ut congue sit amet lorem
+        ut interdum. Etiam et nisi justo. Nullam aliquet interdum vestibulum. Vestibulum laoreet
+        dolor non dolor dictum, vitae iaculis neque vehicula. Nunc nec mollis justo. Duis elit
+        enim, consequat quis mi cursus, facilisis placerat ex. \n\n
+
+        Phasellus nec felis sed libero imperdiet pellentesque. Ut et sodales nunc. Vivamus dapibus
+        sapien vitae egestas dapibus. Nam in malesuada enim, at maximus justo. Vestibulum eu velit
+        in mauris aliquet porta. Maecenas dignissim leo id feugiat tempus. Vivamus tincidunt
+        facilisis sapien, quis dignissim felis. Maecenas aliquam est turpis, ac volutpat ex
+        pellentesque nec.
+    </string>
 </resources>

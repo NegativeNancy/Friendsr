@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             intent.putExtra("clicked_friend", clickedFriend);
+            intent.putExtra("position", position);
             startActivity(intent);
         }
     }
