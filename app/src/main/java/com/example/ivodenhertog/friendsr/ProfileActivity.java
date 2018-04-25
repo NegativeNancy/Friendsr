@@ -1,12 +1,15 @@
 package com.example.ivodenhertog.friendsr;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
+    String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,13 +19,30 @@ public class ProfileActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Friend retrievedFriend = (Friend) intent.getSerializableExtra("clicked_friend");
 
-        String userName = retrievedFriend.getName();
+        userName = retrievedFriend.getName();
         int userImage = retrievedFriend.getDrawableId();
 
-        ImageView image = findViewById(R.id.profileImage);
-        TextView name = findViewById(R.id.profileName);
+        ImageView profileImage = findViewById(R.id.profileImage);
+        TextView profileName = findViewById(R.id.profileName);
+        RatingBar profileRating = findViewById(R.id.profileRating);
 
-        image.setImageDrawable(getResources().getDrawable(userImage));
-        name.setText(userName);
+        profileImage.setImageDrawable(getResources().getDrawable(userImage));
+        profileName.setText(userName);
+        profileRating.setOnRatingBarChangeListener(new ProfileRatingClicked());
+
+        SharedPreferences prefs = getSharedPreferences(userName, MODE_PRIVATE);
+
+        Float rating = prefs.getFloat("rating", 0);
+        profileRating.setRating(rating);
+    }
+
+    private class ProfileRatingClicked implements RatingBar.OnRatingBarChangeListener {
+        @Override
+        public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+            SharedPreferences.Editor editor = getSharedPreferences(userName, MODE_PRIVATE).edit();
+
+            editor.putFloat("rating", rating);
+            editor.apply();
+        }
     }
 }
