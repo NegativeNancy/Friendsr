@@ -36,11 +36,9 @@ public class FriendsAdapter extends ArrayAdapter<Friend> {
         Friend inputFriend = (Friend) friends.get(position);
 
         int inputId = inputFriend.getDrawableId();
-        Drawable inputImage = getContext().getResources().getDrawable(inputId);
-        String inputName = inputFriend.getName();
 
-        profileImage.setImageDrawable(inputImage);
-        profileName.setText(inputName);
+        profileImage.setImageDrawable(getContext().getResources().getDrawable(inputId));
+        profileName.setText(inputFriend.getName());
 
         return convertView;
     }
