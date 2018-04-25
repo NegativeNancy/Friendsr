@@ -17,6 +17,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         Intent intent = getIntent();
+        loadProfile(intent);
+    }
+
+    public void loadProfile(Intent intent) {
         Friend retrievedFriend = (Friend) intent.getSerializableExtra("clicked_friend");
 
         userName = retrievedFriend.getName();
