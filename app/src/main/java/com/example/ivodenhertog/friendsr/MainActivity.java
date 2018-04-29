@@ -11,32 +11,35 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Friend> friends = new ArrayList<>();
+    private final ArrayList<Friend> friends = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (int i = 0; i < 10; i++) {
+        // Create all the profiles to be displayed.
+        String[] names = getResources().getStringArray(R.array.names);
+        for (int i = 0; i < names.length; i++) {
             friends.add(addNewFriend(i));
         }
 
+        // Use adapter to fill the view with profiles.
         FriendsAdapter adapter = new FriendsAdapter(this, R.layout.grid_item, friends);
-
         GridView gridView = findViewById(R.id.gridView);
         gridView.setAdapter(adapter);
-
         gridView.setOnItemClickListener(new GridItemClickListener());
     }
 
-    public Friend addNewFriend(int i) {
+    private Friend addNewFriend(int i) {
+        // Create profiles to be displayed in the grid view.
         String[] names = getResources().getStringArray(R.array.names);
 
         String name = names[i];
         String bio = "This is the bio of " + name;
         String nameLower = name.toLowerCase();
 
+        // Get drawable to display as profile picture.
         int id = getResources().getIdentifier(
                 "" +  nameLower, "drawable", getPackageName());
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class GridItemClickListener implements AdapterView.OnItemClickListener {
+        // Create an intent to send when an profile is clicked in the GridView.
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Friend clickedFriend = (Friend) parent.getItemAtPosition(position);
@@ -54,4 +58,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    // Todo: create function that shows menu with multiple options.
 }

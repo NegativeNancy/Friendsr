@@ -3,8 +3,9 @@ package com.example.ivodenhertog.friendsr;
 import java.io.Serializable;
 
 public class Friend implements Serializable {
-    private String name, bio;
-    private int drawableId;
+    private final String name;
+    private final String bio;
+    private final int drawableId;
     private float rating;
 
     public void setRating(float rating) {
