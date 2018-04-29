@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FriendsAdapter extends ArrayAdapter<Friend> {
+class FriendsAdapter extends ArrayAdapter<Friend> {
 
     private final ArrayList friends;
 

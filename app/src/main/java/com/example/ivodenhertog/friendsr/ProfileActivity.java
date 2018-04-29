@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
     private String userName;
+    private Friend retrievedFriend;
+    private CharSequence originalBio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void loadProfile(Intent intent) {
         // Retrieve the profile that has been clicked.
-        Friend retrievedFriend = (Friend) intent.getSerializableExtra("clicked_friend");
+        retrievedFriend = (Friend) intent.getSerializableExtra("clicked_friend");
         int userId = intent.getIntExtra("position", 0);
         userName = retrievedFriend.getName();
         int userImage = retrievedFriend.getDrawableId();
@@ -47,25 +51,62 @@ public class ProfileActivity extends AppCompatActivity {
         Float rating = prefs.getFloat("rating", 0);
         profileRating.setRating(rating);
 
-        // Calculates which temp bio should be displayed.
-        String placeholderBioVersion = "placeholder_bio_" + (userId % 3);
-        int bioId = getResources().getIdentifier(placeholderBioVersion, "string", getPackageName());
-
-        // Set bio and make view scrollable.
-        profileBio.setText(bioId);
-        profileBio.setMovementMethod(new ScrollingMovementMethod());
+        String customBio = prefs.getString("bio", null);
+        if (customBio != null) {
+            profileBio.setText(customBio);
+        } else {
+            // Calculates which temp bio should be displayed.
+            String placeholderBioVersion = "placeholder_bio_" + (userId % 3);
+            int bioId = getResources().getIdentifier(placeholderBioVersion, "string", getPackageName());
+            profileBio.setText(bioId);
+        }
+        originalBio = profileBio.getText();
     }
 
+
+    // Functio to store rating in SharedPreference of profile.
     private class ProfileRatingClicked implements RatingBar.OnRatingBarChangeListener {
-        // Store rating in SharedPreference of profile.
         @Override
         public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
             SharedPreferences.Editor editor = getSharedPreferences(userName, MODE_PRIVATE).edit();
-
             editor.putFloat("rating", rating);
             editor.apply();
         }
     }
 
-    // Todo: create function that stores new bio in SharedPreferences.
+    // Function to create on-screen menu.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        return(true);
+    }
+
+    // Function that handles the events when menu button is pressed.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.edit_bio:
+                // Start new activity to change bio.
+                Intent intent = new Intent(ProfileActivity.this, EditBioActivity.class);
+                intent.putExtra("name", userName);
+                intent.putExtra("bio", originalBio);
+                startActivityForResult(intent, 1);
+                return(true);
+            case R.id.about:
+                Toast.makeText(this, R.string.about_toast, Toast.LENGTH_LONG).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    // Function to reload activity to show new bio.
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                startActivity(getIntent());
+                finish();
+            }
+        }
+    }
 }

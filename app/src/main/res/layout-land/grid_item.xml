@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="230dp"
     android:orientation="vertical"
-    tools:padding="12dp">
+    tools:padding="12dp"
+    tools:ignore="UseCompoundDrawables">
 
     <TextView
         android:id="@+id/profileName"

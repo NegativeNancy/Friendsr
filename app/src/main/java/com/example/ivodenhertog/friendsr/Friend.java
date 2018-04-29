@@ -2,7 +2,7 @@ package com.example.ivodenhertog.friendsr;
 
 import java.io.Serializable;
 
-public class Friend implements Serializable {
+class Friend implements Serializable {
     private final String name;
     private final String bio;
     private final int drawableId;

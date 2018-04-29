@@ -2,6 +2,9 @@
     <string name="app_name">Friendsr</string>
     <string name="profile_image_description">This is a profile image</string>
     <string name="placeholder_name">Placeholder</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
     <string name="placeholder_bio_0">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus ex iaculis nisl
         dapibus maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
@@ -74,4 +77,13 @@
         facilisis sapien, quis dignissim felis. Maecenas aliquam est turpis, ac volutpat ex
         pellentesque nec.
     </string>
+    <string name="about_toast">This app is made as an assignment for the minor Programmeren.</string>
+    <string name="reset">Reset</string>
+    <string name="reset_rating">Enable to reset ratings of all profiles.</string>
+    <string name="reset_bio">Enable to reset all custom bio\'s</string>
+    <string name="apply">Apply</string>
+    <string name="edit_bio">Edit Bio</string>
+    <string name="edit_title">Edit Bio</string>
+    <string name="reset_all">Reset all custom values</string>
+    <string name="reset_all_btn">Reset all</string>
 </resources>
